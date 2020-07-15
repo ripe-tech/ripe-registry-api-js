@@ -1,2 +1,3 @@
-# ripe-registry-api-js
-ripe-registry-api-js
+# RIPE Registry API for Javascript
+
+The RIPE Registry Javascript client.
