@@ -1,7 +1,12 @@
 import { API as BaseAPI, mix, load, conf } from "yonius";
+import { ClientAPI } from "./client";
+import { IterationAPI } from "./iteration";
+import { PersonAPI } from "./person";
+import { ProjectAPI } from "./project";
+
 const RIPE_REGISTRY_BASE_URL = "http://localhost:3000/";
 
-export class API extends mix(BaseAPI) {
+export class API extends mix(BaseAPI).with(ClientAPI, IterationAPI, PersonAPI, ProjectAPI) {
     constructor(kwargs = {}) {
         super(kwargs);
         this.baseUrl = conf("RIPE_REGISTRY_BASE_URL", RIPE_REGISTRY_BASE_URL);
