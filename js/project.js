@@ -11,7 +11,7 @@ export const ProjectAPI = superclass =>
          * @memberof ProjectAPI
          * @returns {Promise} The project result list.
          */
-        async getProjects() {
+        async listProjects() {
             const url = this.baseUrl + "projects";
             const contents = await this.get(url);
             return contents;
@@ -53,7 +53,6 @@ export const ProjectAPI = superclass =>
          * @memberof ProjectAPI
          * @param {String} name The name of the project.
          * @param {Object} body An object that contains the updated information about the project, such as:
-         * - 'name' - The unique project's name, used to identify and differentiate from the other projects.
          * - 'description' - The project's description, containing information about the project.
          * - 'client' -  The client's name that represents the client on which this project is destined to.
          * - 'manager' - The person managing the project, identified by its e-mail.
@@ -85,7 +84,7 @@ export const ProjectAPI = superclass =>
          * @param {String} name The name of the project.
          * @returns {Promise} The project's iterations result list.
          */
-        async getProjectIterations(name) {
+        async listProjectIterations(name) {
             const url = this.baseUrl + `projects/${name}/iterations`;
             const contents = await this.get(url);
             return contents;

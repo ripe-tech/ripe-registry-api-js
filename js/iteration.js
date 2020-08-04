@@ -12,7 +12,7 @@ export const IterationAPI = superclass =>
          * @memberof IterationAPI
          * @returns {Promise} The iteration result list.
          */
-        async getIterations() {
+        async listIterations() {
             const url = this.baseUrl + "iterations";
             const contents = await this.get(url);
             return contents;

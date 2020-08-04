@@ -12,7 +12,7 @@ export const PersonAPI = superclass =>
          * @memberof PersonAPI
          * @returns {Promise} The person result list.
          */
-        async getPersons() {
+        async listPersons() {
             const url = this.baseUrl + "people";
             const contents = await this.get(url);
             return contents;
@@ -57,7 +57,6 @@ export const PersonAPI = superclass =>
          * @param {String} email The e-mail of the person.
          * @param {Object} body An object that contains information about a person, such as:
          * - 'name' - The name of the person.
-         * - 'email' - The e-mail of the person.
          * - 'company' - The person's current place of work.
          * - 'position' - The person's current position/title hold in his/hers company.
          * - 'phone' - The person's current phone number.
@@ -90,7 +89,7 @@ export const PersonAPI = superclass =>
          * @param {String} email The e-mail of the person.
          * @returns {Promise} The person's projects result list.
          */
-        async getPersonProjects(email) {
+        async listPersonProjects(email) {
             const url = this.baseUrl + `people/${email}/projects`;
             const contents = await this.get(url);
             return contents;
@@ -103,7 +102,7 @@ export const PersonAPI = superclass =>
          * @param {String} email The e-mail of the person.
          * @returns {Promise} The person's clients result list.
          */
-        async getPersonClients(email) {
+        async listPersonClients(email) {
             const url = this.baseUrl + `persons/${email}/clients`;
             const contents = await this.get(url);
             return contents;

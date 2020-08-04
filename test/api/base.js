@@ -2,8 +2,9 @@ const assert = require("assert");
 const ripe = require("../..");
 
 describe("PersonAPI", function() {
+    const api = new ripe.API();
+
     it("should be able to construct a new person", async () => {
-        const api = new ripe.API();
         const person = await api.createPerson({
             name: "Jason A. Barton",
             email: "jasonA@email.com",
@@ -20,8 +21,7 @@ describe("PersonAPI", function() {
         await api.deletePerson("jasonA@email.com");
     });
 
-    it("should be able to list the existing person", async () => {
-        const api = new ripe.API();
+    it("should be able to get the existing person", async () => {
         await api.createPerson({
             name: "Jason B. Barton",
             email: "jasonB@email.com",
@@ -41,7 +41,6 @@ describe("PersonAPI", function() {
     });
 
     it("should be able to update an existing person", async () => {
-        const api = new ripe.API();
         await api.createPerson({
             name: "Jason C. Barton",
             email: "jasonC@email.com",
@@ -63,7 +62,6 @@ describe("PersonAPI", function() {
     });
 
     it("should be able to delete an existing person", async () => {
-        const api = new ripe.API();
         await api.createPerson({
             name: "Jason D. Barton",
             email: "jasonD@email.com",

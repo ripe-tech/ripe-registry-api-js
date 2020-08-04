@@ -10,7 +10,7 @@ export const ClientAPI = superclass =>
          * @memberof ClientAPI
          * @returns {Promise} The client result list.
          */
-        async getClients() {
+        async listClients() {
             const url = this.baseUrl + "clients";
             console.log(url);
             const contents = await this.get(url);
@@ -53,7 +53,6 @@ export const ClientAPI = superclass =>
          * @memberof ClientAPI
          * @param {String} name The name of the client.
          * @param {Object} body An object that contains information about a client, such as:
-         * - 'name' - The name of the client.
          * - 'website' - The client's website URL.
          * - 'accountManager' - The person that manages the client's account, identified by its e-mail.
          * - 'clientRepresentative' - The person representing the client, identified by its e-mail.
@@ -85,7 +84,7 @@ export const ClientAPI = superclass =>
          * @param {String} email name The name of the client.
          * @returns {Promise} The client's projects result list.
          */
-        async getClientProjects(name) {
+        async listClientProjects(name) {
             const url = this.baseUrl + `clients/${name}/projects`;
             const contents = await this.get(url);
             return contents;

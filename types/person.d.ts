@@ -12,11 +12,11 @@ export interface Person {
 }
 
 export declare class PersonAPI {
-    getPersons(): Array<Person>
+    listPersons(): Array<Person>
     getPerson(email: string): Person;
     createPerson(body: object): Person;
     updatePerson(email: string, body: object): Person;
-    deletePerson(email:string): Person;
-    getPersonProjects(email: string): Array<Project>;
-    getPersonClients(email: string): Array<Client>;
+    deletePerson(email: string): Person;
+    listPersonProjects(email: string): Array<Project>;
+    listPersonClients(email: string): Array<Client>;
 }

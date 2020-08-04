@@ -23,7 +23,7 @@ export interface Iteration {
 }
 
 export declare class IterationAPI {
-    getIterations(): Array<Iteration>;
+    listIterations(): Array<Iteration>;
     getIteration(id: string): Iteration;
     createIteration(body: object): Iteration;
     updateIteration(id: string, body: object): Iteration;

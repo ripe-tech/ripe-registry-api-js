@@ -11,10 +11,10 @@ export interface Project {
 }
 
 export declare class ProjectAPI {
-    getProjects(): Array<Project>
+    listProjects(): Array<Project>
     getProject(name: string): Project;
     createProject(body: object): Project;
     updateProject(name: string, body: object): Project;
     deleteProject(name: string): Project;
-    getProjectIterations(name: string): Array<Iteration>;
+    listProjectIterations(name: string): Array<Iteration>;
 }

@@ -10,10 +10,10 @@ export interface Client {
 }
 
 export declare class ClientAPI {
-    getClients(): Array<Client>;
-    getClient(name: number): Client;
+    listClients(): Array<Client>;
+    getClient(name: string): Client;
     createClient(body: object): Client;
     updateClient(name: string, body: object): Client;
     deleteClient(name: string): Client;
-    getClientProjects(name: string): Array<Project>;
+    listClientProjects(name: string): Array<Project>;
 }
