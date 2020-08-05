@@ -12,7 +12,6 @@ export const ClientAPI = superclass =>
          */
         async listClients() {
             const url = this.baseUrl + "clients";
-            console.log(url);
             const contents = await this.get(url);
             return contents;
         }
