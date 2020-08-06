@@ -18,5 +18,3 @@ The initialization can be done by providing an `options` object such as:
     token: "sd1029bfwef9adas+0feqefi"
 }
 ```
-
-
