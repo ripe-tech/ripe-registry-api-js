@@ -10,11 +10,27 @@ export interface Project {
     readonly manager: Person;
 }
 
+export interface ProjectPatch {
+    readonly id?: string;
+    readonly name?: string;
+    readonly description?: string;
+    readonly client?: Client;
+    readonly manager?: Person;
+}
+
+export interface ProjectCreate {
+    readonly id?: string;
+    readonly name: string;
+    readonly description?: string;
+    readonly client?: Client;
+    readonly manager?: Person;
+}
+
 export declare class ProjectAPI {
     listProjects(): Array<Project>
     getProject(name: string): Project;
-    createProject(payload: Project): Project;
-    updateProject(name: string, payload: object): Project;
+    createProject(payload: ProjectCreate): Project;
+    updateProject(name: string, payload: ProjectPatch): Project;
     deleteProject(name: string): Project;
     listProjectIterations(name: string): Array<Iteration>;
 }
