@@ -35,7 +35,7 @@ export const IterationAPI = superclass =>
          * Creates a new iteration with the provided information.
          *
          * @memberof IterationAPI
-         * @param {Object} body An object that contains information about an iteration, such as:
+         * @param {Object} payload An object that contains information about an iteration, such as:
          * - 'name' - The iteration's name.
          * - 'project' - The project in which the iteration belongs to, identified by its name.
          * - 'number' - The number of times the iteration was updated.
@@ -48,9 +48,9 @@ export const IterationAPI = superclass =>
          * - 'status'- The iteration's current status, can have three values: "opened", "approved" or "rejected".
          * @returns {Promise} The created iteration.
          */
-        async createIteration(body) {
+        async createIteration(payload) {
             const url = this.baseUrl + "iterations";
-            const iteration = await this.post(url, { dataJ: body });
+            const iteration = await this.post(url, { dataJ: payload });
             return iteration;
         }
 
@@ -59,7 +59,7 @@ export const IterationAPI = superclass =>
          *
          * @memberof IterationAPI
          * @param {String} id The identified of the iteration.
-         * @param {Object} body An object that contains information about an iteration, such as:
+         * @param {Object} payload An object that contains information about an iteration, such as:
          * - 'name' - The iteration's name.
          * - 'project' - The project in which the iteration belongs to, identified by its name.
          * - 'number' - The number of times the iteration was updated.
@@ -72,9 +72,9 @@ export const IterationAPI = superclass =>
          * - 'status'- The iteration's current status, can have three values: "opened", "approved" or "rejected".
          * @returns {Promise} The updated iteration.
          */
-        async updateIteration(id, body) {
+        async updateIteration(id, payload) {
             const url = this.baseUrl + `iterations/${id}`;
-            const iteration = await this.post(url, { dataJ: body });
+            const iteration = await this.post(url, { dataJ: payload });
             return iteration;
         }
 

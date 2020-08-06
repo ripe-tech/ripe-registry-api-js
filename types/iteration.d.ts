@@ -8,7 +8,7 @@ export enum Status {
 }
 
 export interface Iteration {
-    readonly id: string;
+    readonly id?: string;
     readonly name: string;
     readonly project: Project;
     readonly number: number;
@@ -25,7 +25,7 @@ export interface Iteration {
 export declare class IterationAPI {
     listIterations(): Array<Iteration>;
     getIteration(id: string): Iteration;
-    createIteration(body: object): Iteration;
-    updateIteration(id: string, body: object): Iteration;
+    createIteration(payload: Iteration): Iteration;
+    updateIteration(id: string, payload: object): Iteration;
     deleteIteration(id: string): Iteration;
 }

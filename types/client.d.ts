@@ -2,7 +2,7 @@ import { Person } from "./person";
 import { Project } from "./project";
 
 export interface Client {
-    readonly id: string;
+    readonly id?: string;
     readonly name: string;
     readonly website: string;
     readonly accountManager: Person;
@@ -12,8 +12,8 @@ export interface Client {
 export declare class ClientAPI {
     listClients(): Array<Client>;
     getClient(name: string): Client;
-    createClient(body: object): Client;
-    updateClient(name: string, body: object): Client;
+    createClient(payload: Client): Client;
+    updateClient(name: string, payload: object): Client;
     deleteClient(name: string): Client;
     listClientProjects(name: string): Array<Project>;
 }

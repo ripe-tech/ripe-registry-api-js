@@ -35,7 +35,7 @@ export const PersonAPI = superclass =>
          * Creates a new person with the provided information.
          *
          * @memberof PersonAPI
-         * @param {Object} body An object that contains information about a person, such as:
+         * @param {Object} payload An object that contains information about a person, such as:
          * - 'name' - The name of the person.
          * - 'email' - The e-mail of the person.
          * - 'company' - The person's current place of work.
@@ -44,9 +44,9 @@ export const PersonAPI = superclass =>
          * - 'platformeID' - The person's Platforme username.
          * @returns {Promise} The created person.
          */
-        async createPerson(body) {
+        async createPerson(payload) {
             const url = this.baseUrl + "people";
-            const person = await this.post(url, { dataJ: body });
+            const person = await this.post(url, { dataJ: payload });
             return person;
         }
 
@@ -55,7 +55,7 @@ export const PersonAPI = superclass =>
          *
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
-         * @param {Object} body An object that contains information about a person, such as:
+         * @param {Object} payload An object that contains information about a person, such as:
          * - 'name' - The name of the person.
          * - 'company' - The person's current place of work.
          * - 'position' - The person's current position/title hold in his/hers company.
@@ -63,9 +63,9 @@ export const PersonAPI = superclass =>
          * - 'platformeID' - The person's Platforme username.
          * @returns {Promise} The updated person.
          */
-        async updatePerson(email, body) {
+        async updatePerson(email, payload) {
             const url = this.baseUrl + `people/${email}`;
-            const person = await this.put(url, { dataJ: body });
+            const person = await this.put(url, { dataJ: payload });
             return person;
         }
 
