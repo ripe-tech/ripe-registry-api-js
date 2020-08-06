@@ -10,15 +10,12 @@ export interface Client {
 }
 
 export interface ClientPatch {
-    readonly id?: string;
-    readonly name?: string;
     readonly website?: string;
     readonly accountManager?: Person;
     readonly clientRepresentative?: Person;
 }
 
 export interface ClientCreate {
-    readonly id?: string;
     readonly name: string;
     readonly website?: string;
     readonly accountManager?: Person;

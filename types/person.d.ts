@@ -12,8 +12,6 @@ export interface Person {
 }
 
 export interface PersonPatch {
-    readonly id?: string;
-    readonly email?: string;
     readonly name?: string;
     readonly company?: string;
     readonly position?: string;
@@ -22,7 +20,6 @@ export interface PersonPatch {
 }
 
 export interface PersonCreate {
-    readonly id?: string;
     readonly email: string;
     readonly name: string;
     readonly company?: string;

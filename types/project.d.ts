@@ -11,15 +11,12 @@ export interface Project {
 }
 
 export interface ProjectPatch {
-    readonly id?: string;
-    readonly name?: string;
     readonly description?: string;
     readonly client?: Client;
     readonly manager?: Person;
 }
 
 export interface ProjectCreate {
-    readonly id?: string;
     readonly name: string;
     readonly description?: string;
     readonly client?: Client;

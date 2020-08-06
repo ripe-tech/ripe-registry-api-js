@@ -23,7 +23,6 @@ export interface Iteration {
 }
 
 export interface IterationPatch {
-    readonly id?: string;
     readonly name?: string;
     readonly project?: Project;
     readonly number?: number;
@@ -38,7 +37,6 @@ export interface IterationPatch {
 }
 
 export interface IterationCreate {
-    readonly id?: string;
     readonly name: string;
     readonly project: Project;
     readonly number?: number;
