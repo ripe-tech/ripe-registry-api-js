@@ -35,17 +35,7 @@ export const IterationAPI = superclass =>
          * Creates a new iteration with the provided information.
          *
          * @memberof IterationAPI
-         * @param {Iteration} payload An object that contains information about an iteration, such as:
-         * - 'name' - The iteration's name.
-         * - 'project' - The project in which the iteration belongs to, identified by its name.
-         * - 'number' - The number of times the iteration was updated.
-         * - 'owner' -  The person who started the iteration and is responsible for the iteration changes, identified by its e-mail.
-         * - 'reviewer' - The person who is set as reviewer. This person is the responsible for the review of the iteration and decide to approve or reject the iteration, identified by its e-mail.
-         * - 'description' - The iteration's description, used as field to describe and in general add more information about the changes in the iteration.
-         * - 'tags' - An array that contains the tags that categorize the iteration.
-         * - 'files' - An array that contains the iteration's attached files.
-         * - 'messages' - A array that contains the messages sent back and forth between the iteration's owner and reviewer through the iteration's duration.
-         * - 'status'- The iteration's current status, can have three values: "opened", "approved" or "rejected".
+         * @param {Iteration} payload An object that contains information about an iteration.
          * @returns {Promise} The created iteration.
          */
         async createIteration(payload) {
@@ -59,17 +49,7 @@ export const IterationAPI = superclass =>
          *
          * @memberof IterationAPI
          * @param {String} id The identified of the iteration.
-         * @param {Object} payload An object that contains information about an iteration, such as:
-         * - 'name' - The iteration's name.
-         * - 'project' - The project in which the iteration belongs to, identified by its name.
-         * - 'number' - The number of times the iteration was updated.
-         * - 'owner' -  The person who started the iteration and is responsible for the iteration changes, identified by its e-mail.
-         * - 'reviewer' - The person who is set as reviewer. This person is the responsible for the review of the iteration and decide to approve or reject the iteration, identified by its e-mail.
-         * - 'description' - The iteration's description, used as field to describe and in general add more information about the changes in the iteration.
-         * - 'tags' - An array that contains the tags that categorize the iteration.
-         * - 'files' - An array that contains the iteration's attached files.
-         * - 'messages' - A array that contains the messages sent back and forth between the iteration's owner and reviewer through the iteration's duration.
-         * - 'status'- The iteration's current status, can have three values: "opened", "approved" or "rejected".
+         * @param {Object} payload An object that contains information about an iteration.
          * @returns {Promise} The updated iteration.
          */
         async updateIteration(id, payload) {
