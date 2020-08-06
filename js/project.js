@@ -34,11 +34,7 @@ export const ProjectAPI = superclass =>
          * Creates a new project with the provided information.
          *
          * @memberof ProjectAPI
-         * @param {Project} payload An object that contains information about a project, such as:
-         * - 'name' - The unique project's name, used to identify and differentiate from the other projects.
-         * - 'description' - The project's description, containing information about the project.
-         * - 'client' -  The client's name that represents the client on which this project is destined to.
-         * - 'manager' - The person managing the project, identified by its e-mail.
+         * @param {Project} payload An object that contains information about a project.
          * @returns {Promise} The created project.
          */
         async createProject(payload) {
@@ -52,10 +48,7 @@ export const ProjectAPI = superclass =>
          *
          * @memberof ProjectAPI
          * @param {String} name The name of the project.
-         * @param {Object} payload An object that contains the updated information about the project, such as:
-         * - 'description' - The project's description, containing information about the project.
-         * - 'client' -  The client's name that represents the client on which this project is destined to.
-         * - 'manager' - The person managing the project, identified by its e-mail.
+         * @param {Object} payload An object that contains the updated information about the project.
          * @returns {Promise} The updated project.
          */
         async updateProject(name, payload) {

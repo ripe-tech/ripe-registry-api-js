@@ -35,13 +35,7 @@ export const PersonAPI = superclass =>
          * Creates a new person with the provided information.
          *
          * @memberof PersonAPI
-         * @param {Person} payload An object that contains information about a person, such as:
-         * - 'name' - The name of the person.
-         * - 'email' - The e-mail of the person.
-         * - 'company' - The person's current place of work.
-         * - 'position' - The person's current position/title hold in his/hers company.
-         * - 'phone' - The person's current phone number.
-         * - 'platformeID' - The person's Platforme username.
+         * @param {Person} payload An object that contains information about a person.
          * @returns {Promise} The created person.
          */
         async createPerson(payload) {
@@ -55,12 +49,7 @@ export const PersonAPI = superclass =>
          *
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
-         * @param {Object} payload An object that contains information about a person, such as:
-         * - 'name' - The name of the person.
-         * - 'company' - The person's current place of work.
-         * - 'position' - The person's current position/title hold in his/hers company.
-         * - 'phone' - The person's current phone number.
-         * - 'platformeID' - The person's Platforme username.
+         * @param {Object} payload An object that contains information about a person.
          * @returns {Promise} The updated person.
          */
         async updatePerson(email, payload) {
