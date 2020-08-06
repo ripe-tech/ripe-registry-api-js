@@ -34,7 +34,7 @@ export const ProjectAPI = superclass =>
          * Creates a new project with the provided information.
          *
          * @memberof ProjectAPI
-         * @param {Object} payload An object that contains information about a project, such as:
+         * @param {Project} payload An object that contains information about a project, such as:
          * - 'name' - The unique project's name, used to identify and differentiate from the other projects.
          * - 'description' - The project's description, containing information about the project.
          * - 'client' -  The client's name that represents the client on which this project is destined to.

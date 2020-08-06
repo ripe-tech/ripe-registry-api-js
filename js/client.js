@@ -33,7 +33,7 @@ export const ClientAPI = superclass =>
          * Creates a new client with the provided information.
          *
          * @memberof ClientAPI
-         * @param {Object} payload An object that contains information about a client, such as:
+         * @param {Client} payload An object that contains information about a client, such as:
          * - 'name' - The name of the client.
          * - 'website' - The client's website URL.
          * - 'accountManager' - The person that manages the client's account, identified by its e-mail.

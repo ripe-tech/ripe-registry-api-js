@@ -35,7 +35,7 @@ export const PersonAPI = superclass =>
          * Creates a new person with the provided information.
          *
          * @memberof PersonAPI
-         * @param {Object} payload An object that contains information about a person, such as:
+         * @param {Person} payload An object that contains information about a person, such as:
          * - 'name' - The name of the person.
          * - 'email' - The e-mail of the person.
          * - 'company' - The person's current place of work.

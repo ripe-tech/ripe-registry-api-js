@@ -35,7 +35,7 @@ export const IterationAPI = superclass =>
          * Creates a new iteration with the provided information.
          *
          * @memberof IterationAPI
-         * @param {Object} payload An object that contains information about an iteration, such as:
+         * @param {Iteration} payload An object that contains information about an iteration, such as:
          * - 'name' - The iteration's name.
          * - 'project' - The project in which the iteration belongs to, identified by its name.
          * - 'number' - The number of times the iteration was updated.
