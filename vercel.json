@@ -3,11 +3,13 @@
     "builds": [
         {
             "src": "package.json",
-            "use": "@now/static-build",
+            "use": "@now/static",
             "config": {
                 "distDir": "dist"
             }
         }
     ],
-    "routes": [{ "src": "/docs", "dest": "/docs/index.html" }]
+    "routes": [
+        { "src": "/(.*)", "dest": "/docs/index.html" }
+    ]
 }
