@@ -1,4 +1,3 @@
-
 {
     "version": 2,
     "builds": [
@@ -10,7 +9,5 @@
             }
         }
     ],
-    "routes": [
-        { "src": "/", "dest": "/docs/index.html" }
-    ]
+    "routes": [{ "src": "/", "dest": "/docs/index.html" }]
 }
