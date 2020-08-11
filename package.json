@@ -38,12 +38,13 @@
     ],
     "scripts": {
         "build": "rollup -c",
-        "docs": "jsdoc js -r -c ./jsdoc.json -R ./README.md",
+        "docs": "jsdoc js -r -c ./jsdoc.json -R ./README.md -d dist/docs",
         "example": "node examples/simple.js",
         "lint": "eslint rollup.config.js \"./{js,test}/**/*.{js,json}\"",
         "lint-fix": "eslint rollup.config.js \"./{js,test}/**/*.{js,json}\" --fix",
         "prettier": "prettier rollup.config.js \"./*.{js,json}\" \"./{js,test}/**/*.{js,json}\" --write",
         "pretty": "npm run prettier && npm run lint-fix",
+        "now-build": "npm run docs",
         "test": "mocha --recursive",
         "upgrade": "npx sort-package-json && ncu -u",
         "watch": "rollup -c -w"
