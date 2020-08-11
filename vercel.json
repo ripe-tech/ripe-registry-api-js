@@ -9,5 +9,5 @@
             }
         }
     ],
-    "routes": [{ "src": "/", "dest": "/docs/index.html" }]
+    "routes": [{ "src": "/docs", "dest": "/docs/index.html" }]
 }

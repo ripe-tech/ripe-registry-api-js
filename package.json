@@ -38,7 +38,7 @@
     ],
     "scripts": {
         "build": "rollup -c",
-        "docs": "jsdoc js -r -c ./jsdoc.json -R ./README.md -d dist/docs",
+        "docs": "jsdoc js -r -c ./jsdoc.json -R ./README.md",
         "example": "node examples/simple.js",
         "lint": "eslint rollup.config.js \"./{js,test}/**/*.{js,json}\"",
         "lint-fix": "eslint rollup.config.js \"./{js,test}/**/*.{js,json}\" --fix",
