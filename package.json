@@ -1,6 +1,6 @@
 {
     "name": "ripe-registry-api",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "The Ripe Registry API client",
     "keywords": [
         "api",
