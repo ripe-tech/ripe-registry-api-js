@@ -52,7 +52,7 @@ export const ClientAPI = superclass =>
          */
         async updateClient(name, payload) {
             const url = this.baseUrl + `clients/${name}`;
-            const client = await this.post(url, { dataJ: payload });
+            const client = await this.put(url, { dataJ: payload });
             return client;
         }
 

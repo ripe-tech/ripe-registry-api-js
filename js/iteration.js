@@ -54,7 +54,7 @@ export const IterationAPI = superclass =>
          */
         async updateIteration(id, payload) {
             const url = this.baseUrl + `iterations/${id}`;
-            const iteration = await this.post(url, { dataJ: payload });
+            const iteration = await this.put(url, { dataJ: payload });
             return iteration;
         }
 
