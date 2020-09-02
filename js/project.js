@@ -53,7 +53,7 @@ export const ProjectAPI = superclass =>
          */
         async updateProject(name, payload) {
             const url = this.baseUrl + `projects/${name}`;
-            const project = await this.post(url, { dataJ: payload });
+            const project = await this.put(url, { dataJ: payload });
             return project;
         }
 
