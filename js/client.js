@@ -73,7 +73,7 @@ export const ClientAPI = superclass =>
          * Returns the projects of the provided client.
          *
          * @memberof ClientAPI
-         * @param {String} email name The name of the client.
+         * @param {String} name name The name of the client.
          * @returns {Promise} The client's projects result list.
          */
         async listClientProjects(name) {
