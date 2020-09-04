@@ -79,8 +79,8 @@ export const ProjectAPI = superclass =>
          */
         async listProjectIterations(name) {
             const url = this.baseUrl + `projects/${name}/iterations`;
-            const contents = await this.get(url);
-            return contents;
+            const iterations = await this.get(url);
+            return iterations;
         }
 
         /**
