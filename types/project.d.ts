@@ -23,11 +23,65 @@ export interface ProjectCreate {
     readonly manager?: Person;
 }
 
+export enum Status {
+    opened = "opened",
+    approved = "approved",
+    rejected = "rejected"
+}
+
+export interface Iteration {
+    readonly id?: string;
+    readonly name: string;
+    readonly project: Project;
+    readonly number: number;
+    readonly owner: Person;
+    readonly reviewer: Person;
+    readonly description: string;
+    readonly tags: Array<string>;
+    readonly files: Array<string>;
+    readonly messages: Array<string>;
+    readonly created: number;
+    readonly status: keyof typeof Status;
+}
+
+export interface IterationPatch {
+    readonly name?: string;
+    readonly project?: Project;
+    readonly number?: number;
+    readonly owner?: Person;
+    readonly reviewer?: Person;
+    readonly description?: string;
+    readonly tags?: Array<string>;
+    readonly files?: Array<string>;
+    readonly messages?: Array<string>;
+    readonly created?: number;
+    readonly status?: keyof typeof Status;
+}
+
+export interface IterationCreate {
+    readonly name: string;
+    readonly project: Project;
+    readonly number?: number;
+    readonly owner: Person;
+    readonly reviewer: Person;
+    readonly description?: string;
+    readonly tags?: Array<string>;
+    readonly files?: Array<string>;
+    readonly messages?: Array<string>;
+    readonly created?: number;
+    readonly status?: keyof typeof Status;
+}
+
 export declare class ProjectAPI {
     listProjects(): Array<Project>
     getProject(name: string): Project;
     createProject(payload: ProjectCreate): Project;
     updateProject(name: string, payload: ProjectPatch): Project;
     deleteProject(name: string): Project;
-    listProjectIterations(name: string): Array<Iteration>;
+    listIterationsProject(name: string): Array<Iteration>;
+    getIterationProject(name: string): Iteration;
+    getIteration(id: string): Iteration;
+    createIterationProject(payload: IterationCreate): Iteration;
+    updateIterationProject(id: string, payload: IterationPatch): Iteration;
+    deleteIterationProject(id: string): Iteration;
 }

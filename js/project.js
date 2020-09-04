@@ -77,7 +77,7 @@ export const ProjectAPI = superclass =>
          * @param {String} name The name of the project.
          * @returns {Promise} The project's iterations result list.
          */
-        async listProjectIterations(name) {
+        async listIterationsProject(name) {
             const url = this.baseUrl + `projects/${name}/iterations`;
             const iterations = await this.get(url);
             return iterations;
@@ -91,7 +91,7 @@ export const ProjectAPI = superclass =>
          * @param {String} id The identifier of the iteration.
          * @returns {Promise} The iteration requested.
          */
-        async getProjectIteration(name, id) {
+        async getIterationProject(name, id) {
             const url = this.baseUrl + `projects/${name}/iterations/${id}`;
             const iteration = await this.get(url);
             return iteration;
@@ -105,7 +105,7 @@ export const ProjectAPI = superclass =>
          * @param {Iteration} payload An object that contains information about an iteration.
          * @returns {Promise} The created iteration.
          */
-        async createProjectIteration(name, payload) {
+        async createIterationProject(name, payload) {
             const url = this.baseUrl + `projects/${name}/iterations`;
             const iteration = await this.post(url, { dataJ: payload });
             return iteration;
@@ -120,7 +120,7 @@ export const ProjectAPI = superclass =>
          * @param {Object} payload An object that contains information about an iteration.
          * @returns {Promise} The updated iteration.
          */
-        async updateProjectIteration(name, id, payload) {
+        async updateIterationProject(name, id, payload) {
             const url = this.baseUrl + `projects/${name}/iterations/${id}`;
             const iteration = await this.put(url, { dataJ: payload });
             return iteration;
@@ -134,7 +134,7 @@ export const ProjectAPI = superclass =>
          * @param {String} id The identifier of the iteration.
          * @returns {Promise} The deleted iteration.
          */
-        async deleteProjectIteration(name, id) {
+        async deleteIterationProject(name, id) {
             const url = this.baseUrl + `projects/${name}/iterations/${id}`;
             const iteration = await this.delete(url);
             return iteration;
