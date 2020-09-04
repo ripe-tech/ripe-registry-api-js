@@ -46,30 +46,19 @@ export interface Iteration {
 
 export interface IterationPatch {
     readonly name?: string;
-    readonly project?: Project;
-    readonly number?: number;
     readonly owner?: Person;
     readonly reviewer?: Person;
     readonly description?: string;
     readonly tags?: Array<string>;
-    readonly files?: Array<string>;
-    readonly messages?: Array<string>;
-    readonly created?: number;
     readonly status?: keyof typeof Status;
 }
 
 export interface IterationCreate {
     readonly name: string;
-    readonly project: Project;
-    readonly number?: number;
     readonly owner: Person;
     readonly reviewer: Person;
     readonly description?: string;
     readonly tags?: Array<string>;
-    readonly files?: Array<string>;
-    readonly messages?: Array<string>;
-    readonly created?: number;
-    readonly status?: keyof typeof Status;
 }
 
 export declare class ProjectAPI {
