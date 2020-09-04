@@ -77,10 +77,67 @@ export const ProjectAPI = superclass =>
          * @param {String} name The name of the project.
          * @returns {Promise} The project's iterations result list.
          */
-        async listProjectIterations(name) {
+        async listIterationsProject(name) {
             const url = this.baseUrl + `projects/${name}/iterations`;
-            const contents = await this.get(url);
-            return contents;
+            const iterations = await this.get(url);
+            return iterations;
+        }
+
+        /**
+         * Returns the iteration with the provided id within a given project.
+         *
+         * @memberof ProjectAPI
+         * @param {String} name The name of the project.
+         * @param {String} id The identifier of the iteration.
+         * @returns {Promise} The iteration requested.
+         */
+        async getIterationProject(name, id) {
+            const url = this.baseUrl + `projects/${name}/iterations/${id}`;
+            const iteration = await this.get(url);
+            return iteration;
+        }
+
+        /**
+         * Creates a new iteration with the provided information within a given project.
+         *
+         * @memberof ProjectAPI
+         * @param {String} name The name of the project.
+         * @param {Iteration} payload An object that contains information about an iteration.
+         * @returns {Promise} The created iteration.
+         */
+        async createIterationProject(name, payload) {
+            const url = this.baseUrl + `projects/${name}/iterations`;
+            const iteration = await this.post(url, { dataJ: payload });
+            return iteration;
+        }
+
+        /**
+         * Updates the iteration with the provided information.
+         *
+         * @memberof ProjectAPI
+         * @param {String} name The name of the project.
+         * @param {String} id The identified of the iteration.
+         * @param {Object} payload An object that contains information about an iteration.
+         * @returns {Promise} The updated iteration.
+         */
+        async updateIterationProject(name, id, payload) {
+            const url = this.baseUrl + `projects/${name}/iterations/${id}`;
+            const iteration = await this.put(url, { dataJ: payload });
+            return iteration;
+        }
+
+        /**
+         * Deletes the iteration within a given project with the provided identifier.
+         *
+         * @memberof ProjectAPI
+         * @param {String} name The name of the project.
+         * @param {String} id The identifier of the iteration.
+         * @returns {Promise} The deleted iteration.
+         */
+        async deleteIterationProject(name, id) {
+            const url = this.baseUrl + `projects/${name}/iterations/${id}`;
+            const iteration = await this.delete(url);
+            return iteration;
         }
     };
 
