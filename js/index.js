@@ -1,3 +1,4 @@
+export * from "./utils";
 export * from "./base";
 export * from "./client";
 export * from "./person";
