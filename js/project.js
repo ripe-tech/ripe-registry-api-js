@@ -9,11 +9,13 @@ export const ProjectAPI = superclass =>
          * Returns all projects in the registry.
          *
          * @memberof ProjectAPI
+         * @param {Object} options An object of options to configure the query and
+         * its results
          * @returns {Promise} The project result list.
          */
-        async listProjects() {
+        async listProjects(options) {
             const url = this.baseUrl + "projects";
-            const contents = await this.get(url);
+            const contents = await this.get(url, options);
             return contents;
         }
 
@@ -75,11 +77,13 @@ export const ProjectAPI = superclass =>
          *
          * @memberof ProjectAPI
          * @param {String} name The name of the project.
+         * @param {Object} options An object of options to configure the query and
+         * its results
          * @returns {Promise} The project's iterations result list.
          */
-        async listIterationsProject(name) {
+        async listIterationsProject(name, options) {
             const url = this.baseUrl + `projects/${name}/iterations`;
-            const iterations = await this.get(url);
+            const iterations = await this.get(url, options);
             return iterations;
         }
 

@@ -8,11 +8,13 @@ export const ClientAPI = superclass =>
          * Returns all clients in the registry.
          *
          * @memberof ClientAPI
+         * @param {Object} options An object of options to configure the query and
+         * its results
          * @returns {Promise} The client result list.
          */
-        async listClients() {
+        async listClients(options) {
             const url = this.baseUrl + "clients";
-            const contents = await this.get(url);
+            const contents = await this.get(url, options);
             return contents;
         }
 
@@ -74,11 +76,13 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
+         * @param {Object} options An object of options to configure the query and
+         * its results
          * @returns {Promise} The client's projects result list.
          */
-        async listClientProjects(name) {
+        async listClientProjects(name, options) {
             const url = this.baseUrl + `clients/${name}/projects`;
-            const contents = await this.get(url);
+            const contents = await this.get(url, options);
             return contents;
         }
     };
