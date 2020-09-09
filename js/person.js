@@ -11,7 +11,7 @@ export const PersonAPI = superclass =>
          *
          * @memberof PersonAPI
          * @param {Object} options An object of options to configure the query and
-         * its results
+         * its results.
          * @returns {Promise} The person result list.
          */
         async listPersons(options) {
@@ -79,7 +79,7 @@ export const PersonAPI = superclass =>
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
          * @param {Object} options An object of options to configure the query and
-         * its results
+         * its results.
          * @returns {Promise} The person's projects result list.
          */
         async listPersonProjects(email, options) {
@@ -94,7 +94,7 @@ export const PersonAPI = superclass =>
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
          * @param {Object} options An object of options to configure the query and
-         * its results
+         * its results.
          * @returns {Promise} The person's clients result list.
          */
         async listPersonClients(email, options) {

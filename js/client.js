@@ -9,7 +9,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {Object} options An object of options to configure the query and
-         * its results
+         * its results.
          * @returns {Promise} The client result list.
          */
         async listClients(options) {
@@ -77,7 +77,7 @@ export const ClientAPI = superclass =>
          * @memberof ClientAPI
          * @param {String} name The name of the client.
          * @param {Object} options An object of options to configure the query and
-         * its results
+         * its results.
          * @returns {Promise} The client's projects result list.
          */
         async listClientProjects(name, options) {
