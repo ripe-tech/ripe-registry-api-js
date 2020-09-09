@@ -10,11 +10,13 @@ export const PersonAPI = superclass =>
          * Returns all persons in the registry.
          *
          * @memberof PersonAPI
+         * @param {Object} options An object of options to configure the query and
+         * its results.
          * @returns {Promise} The person result list.
          */
-        async listPersons() {
+        async listPersons(options = {}) {
             const url = this.baseUrl + "people";
-            const contents = await this.get(url);
+            const contents = await this.get(url, options);
             return contents;
         }
 
@@ -76,11 +78,13 @@ export const PersonAPI = superclass =>
          *
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
+         * @param {Object} options An object of options to configure the query and
+         * its results.
          * @returns {Promise} The person's projects result list.
          */
-        async listPersonProjects(email) {
+        async listPersonProjects(email, options = {}) {
             const url = this.baseUrl + `people/${email}/projects`;
-            const contents = await this.get(url);
+            const contents = await this.get(url, options);
             return contents;
         }
 
@@ -89,11 +93,13 @@ export const PersonAPI = superclass =>
          *
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
+         * @param {Object} options An object of options to configure the query and
+         * its results.
          * @returns {Promise} The person's clients result list.
          */
-        async listPersonClients(email) {
+        async listPersonClients(email, options = {}) {
             const url = this.baseUrl + `persons/${email}/clients`;
-            const contents = await this.get(url);
+            const contents = await this.get(url, options);
             return contents;
         }
     };
