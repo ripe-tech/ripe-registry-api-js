@@ -12,7 +12,7 @@ export const ClientAPI = superclass =>
          * its results.
          * @returns {Promise} The client result list.
          */
-        async listClients(options) {
+        async listClients(options = {}) {
             const url = this.baseUrl + "clients";
             const contents = await this.get(url, options);
             return contents;
@@ -80,7 +80,7 @@ export const ClientAPI = superclass =>
          * its results.
          * @returns {Promise} The client's projects result list.
          */
-        async listClientProjects(name, options) {
+        async listClientProjects(name, options = {}) {
             const url = this.baseUrl + `clients/${name}/projects`;
             const contents = await this.get(url, options);
             return contents;

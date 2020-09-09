@@ -13,7 +13,7 @@ export const ProjectAPI = superclass =>
          * its results.
          * @returns {Promise} The project result list.
          */
-        async listProjects(options) {
+        async listProjects(options = {}) {
             const url = this.baseUrl + "projects";
             const contents = await this.get(url, options);
             return contents;
@@ -81,7 +81,7 @@ export const ProjectAPI = superclass =>
          * its results.
          * @returns {Promise} The project's iterations result list.
          */
-        async listIterationsProject(name, options) {
+        async listIterationsProject(name, options = {}) {
             const url = this.baseUrl + `projects/${name}/iterations`;
             const iterations = await this.get(url, options);
             return iterations;

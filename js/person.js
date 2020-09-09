@@ -14,7 +14,7 @@ export const PersonAPI = superclass =>
          * its results.
          * @returns {Promise} The person result list.
          */
-        async listPersons(options) {
+        async listPersons(options = {}) {
             const url = this.baseUrl + "people";
             const contents = await this.get(url, options);
             return contents;
@@ -82,7 +82,7 @@ export const PersonAPI = superclass =>
          * its results.
          * @returns {Promise} The person's projects result list.
          */
-        async listPersonProjects(email, options) {
+        async listPersonProjects(email, options = {}) {
             const url = this.baseUrl + `people/${email}/projects`;
             const contents = await this.get(url, options);
             return contents;
@@ -97,7 +97,7 @@ export const PersonAPI = superclass =>
          * its results.
          * @returns {Promise} The person's clients result list.
          */
-        async listPersonClients(email, options) {
+        async listPersonClients(email, options = {}) {
             const url = this.baseUrl + `persons/${email}/clients`;
             const contents = await this.get(url, options);
             return contents;
