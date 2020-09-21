@@ -91,7 +91,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
+         * @param {String} project The name of the project.
          * @returns {Promise} The requested client's project.
          */
         async getClientProject(name, project) {
@@ -119,7 +119,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
+         * @param {String} project The name of the project.
          * @param {Object} payload An object that contains information about a project.
          * @returns {Promise} The updated client's project.
          */
@@ -134,7 +134,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
+         * @param {String} project The name of the project.
          * @returns {Promise} The deleted client's project.
          */
         async deleteClientProject(name, project) {
@@ -148,7 +148,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
+         * @param {String} project The name of the project.
          * @param {Object} options An object of options to configure the query and
          * its results.
          * @returns {Promise} The client's project iterations result list.
@@ -164,8 +164,8 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
          * @returns {Promise} The requested client's project iteration.
          */
         async getProjectIteration(name, project, iteration) {
@@ -180,7 +180,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
+         * @param {String} project The name of the project.
          * @param {Iteration} payload An object that contains information about an iteration.
          * @returns {Promise} The newly created iteration.
          */
@@ -195,8 +195,8 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
          * @param {Object} payload An object that contains information about an iteration.
          * @returns {Promise} The updated iteration.
          */
@@ -212,8 +212,8 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
          * @returns {Promise} The deleted iteration.
          */
         async deleteProjectIteration(name, project, iteration) {
@@ -228,8 +228,8 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
          * @param {Object} options An object of options to configure the query and
          * its results.
          * @returns {Promise} The iteration's reviews result list.
@@ -247,9 +247,9 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
-         * @param {String} review The fqn (fully qualified name) of the review.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
+         * @param {String} review The name of the review.
          * @returns {Promise} The requested iteration's review.
          */
         async getIterationReview(name, project, iteration, review) {
@@ -265,8 +265,8 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
          * @param {Review} payload An object that contains information about a review.
          * @returns {Promise} The newly created iteration.
          */
@@ -283,9 +283,9 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
-         * @param {String} review The fqn (fully qualified name) of the review.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
+         * @param {String} review The name of the review.
          * @param {Object} payload An object that contains information about a review.
          * @returns {Promise} The updated review.
          */
@@ -302,9 +302,9 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @param {String} project The fqn (fully qualified name) of the project.
-         * @param {String} iteration The fqn (fully qualified name) of the iteration.
-         * @param {String} review The fqn (fully qualified name) of the review.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
+         * @param {String} review The name of the review.
          * @returns {Promise} The deleted review.
          */
         async deleteIterationReview(name, project, iteration, review) {

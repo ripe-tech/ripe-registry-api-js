@@ -34,7 +34,6 @@ export interface ProjectPatch {
 export interface ProjectCreate {
     readonly name: string;
     readonly description?: string;
-    readonly client: Client;
     readonly manager?: Person;
 }
 

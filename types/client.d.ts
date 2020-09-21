@@ -85,7 +85,6 @@ export interface ReviewPatch {
 export interface ReviewCreate {
     readonly comment: string;
     readonly status: keyof typeof Status;
-    readonly iteration: string;
 }
 
 export declare class ClientAPI {
