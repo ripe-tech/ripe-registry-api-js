@@ -169,7 +169,8 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The requested client's project iteration.
          */
         async getProjectIteration(name, project, iteration) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
+            const url =
+                this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.get(url);
             return iterationContent;
         }
@@ -200,7 +201,8 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The updated iteration.
          */
         async updateProjectIteration(name, project, iteration, payload) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
+            const url =
+                this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.put(url, { dataJ: payload });
             return iterationContent;
         }
@@ -215,7 +217,8 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The deleted iteration.
          */
         async deleteProjectIteration(name, project, iteration) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
+            const url =
+                this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.delete(url);
             return iterationContent;
         }
@@ -232,7 +235,9 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The iteration's reviews result list.
          */
         async listIterationReviews(name, project, iteration, options = {}) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
+            const url =
+                this.baseUrl +
+                `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
             const contents = await this.get(url, options);
             return contents;
         }
@@ -248,7 +253,9 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The requested iteration's review.
          */
         async getIterationReview(name, project, iteration, review) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
+            const url =
+                this.baseUrl +
+                `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
             const reviewContent = await this.get(url);
             return reviewContent;
         }
@@ -264,7 +271,9 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The newly created iteration.
          */
         async createIterationReview(name, project, iteration, payload) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
+            const url =
+                this.baseUrl +
+                `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
             const reviewContent = await this.post(url, { dataJ: payload });
             return reviewContent;
         }
@@ -281,7 +290,9 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The updated review.
          */
         async updateIterationReview(name, project, iteration, review, payload) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
+            const url =
+                this.baseUrl +
+                `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
             const reviewContent = await this.put(url, { dataJ: payload });
             return reviewContent;
         }
@@ -297,7 +308,9 @@ export const ClientAPI = superclass =>
          * @returns {Promise} The deleted review.
          */
         async deleteIterationReview(name, project, iteration, review) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
+            const url =
+                this.baseUrl +
+                `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
             const reviewContent = await this.delete(url);
             return reviewContent;
         }

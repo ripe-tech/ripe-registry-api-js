@@ -17,7 +17,7 @@ export const ProjectAPI = superclass =>
             const url = this.baseUrl + "projects";
             const contents = await this.get(url, options);
             return contents;
-        };
+        }
     };
 
 export default ProjectAPI;
