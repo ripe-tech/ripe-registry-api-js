@@ -1,5 +1,18 @@
-import { Client } from "./client";
-import { Project } from "./project";
+export interface Options {
+    readonly fields?: Array<string>,
+    readonly eager?: Boolean,
+    readonly eagerL?: Boolean,
+    readonly map?: Boolean,
+    readonly rules?: Boolean,
+    readonly meta?: Boolean,
+    readonly build?: Boolean,
+    readonly fill?: Boolean,
+    readonly resolveA?: Boolean,
+    readonly skip?: Number,
+    readonly limit?: Number,
+    readonly sort?: Array<Object>,
+    readonly raiseE?: Boolean,
+}
 
 export interface Person {
     readonly id?: string;
@@ -29,11 +42,9 @@ export interface PersonCreate {
 }
 
 export declare class PersonAPI {
-    listPersons(): Array<Person>
+    listPersons(options: Options): Array<Person>
     getPerson(email: string): Person;
     createPerson(payload: PersonCreate): Person;
     updatePerson(email: string, payload: PersonPatch): Person;
     deletePerson(email: string): Person;
-    listPersonProjects(email: string): Array<Project>;
-    listPersonClients(email: string): Array<Client>;
 }
