@@ -72,36 +72,6 @@ export const PersonAPI = superclass =>
             const person = await this.delete(url);
             return person;
         }
-
-        /**
-         * Returns the projects of the provided person.
-         *
-         * @memberof PersonAPI
-         * @param {String} email The e-mail of the person.
-         * @param {Object} options An object of options to configure the query and
-         * its results.
-         * @returns {Promise} The person's projects result list.
-         */
-        async listPersonProjects(email, options = {}) {
-            const url = this.baseUrl + `people/${email}/projects`;
-            const contents = await this.get(url, options);
-            return contents;
-        }
-
-        /**
-         * Returns the clients of the provided person.
-         *
-         * @memberof PersonAPI
-         * @param {String} email The e-mail of the person.
-         * @param {Object} options An object of options to configure the query and
-         * its results.
-         * @returns {Promise} The person's clients result list.
-         */
-        async listPersonClients(email, options = {}) {
-            const url = this.baseUrl + `persons/${email}/clients`;
-            const contents = await this.get(url, options);
-            return contents;
-        }
     };
 
 export default PersonAPI;
