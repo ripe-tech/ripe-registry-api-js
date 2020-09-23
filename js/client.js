@@ -80,7 +80,7 @@ export const ClientAPI = superclass =>
          * its results.
          * @returns {Promise} The client's projects result list.
          */
-        async listClientProjects(name, options = {}) {
+        async listProjectsClient(name, options = {}) {
             const url = this.baseUrl + `clients/${name}/projects`;
             const contents = await this.get(url, options);
             return contents;
@@ -94,7 +94,7 @@ export const ClientAPI = superclass =>
          * @param {String} project The name of the project.
          * @returns {Promise} The requested client's project.
          */
-        async getClientProject(name, project) {
+        async getProjectClient(name, project) {
             const url = this.baseUrl + `clients/${name}/projects/${project}`;
             const projectContent = await this.get(url);
             return projectContent;
@@ -108,7 +108,7 @@ export const ClientAPI = superclass =>
          * @param {Project} payload An object that contains information about a project.
          * @returns {Promise} The newly created client's project.
          */
-        async createClientProject(name, payload) {
+        async createProjectClient(name, payload) {
             const url = this.baseUrl + `clients/${name}/projects`;
             const projectContent = await this.post(url, { dataJ: payload });
             return projectContent;
@@ -123,7 +123,7 @@ export const ClientAPI = superclass =>
          * @param {Object} payload An object that contains information about a project.
          * @returns {Promise} The updated client's project.
          */
-        async updateClientProject(name, project, payload) {
+        async updateProjectClient(name, project, payload) {
             const url = this.baseUrl + `clients/${name}/projects/${project}`;
             const projectContent = await this.put(url, { dataJ: payload });
             return projectContent;
@@ -137,7 +137,7 @@ export const ClientAPI = superclass =>
          * @param {String} project The name of the project.
          * @returns {Promise} The deleted client's project.
          */
-        async deleteClientProject(name, project) {
+        async deleteProjectClient(name, project) {
             const url = this.baseUrl + `clients/${name}/projects/${project}`;
             const projectContent = await this.delete(url);
             return projectContent;
@@ -153,7 +153,7 @@ export const ClientAPI = superclass =>
          * its results.
          * @returns {Promise} The client's project iterations result list.
          */
-        async listProjectIterations(name, project, options = {}) {
+        async listIterationsProject(name, project, options = {}) {
             const url = this.baseUrl + `clients/${name}/projects/${project}/iterations`;
             const contents = await this.get(url, options);
             return contents;
@@ -168,7 +168,7 @@ export const ClientAPI = superclass =>
          * @param {String} iteration The name of the iteration.
          * @returns {Promise} The requested client's project iteration.
          */
-        async getProjectIteration(name, project, iteration) {
+        async getIterationProject(name, project, iteration) {
             const url =
                 this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.get(url);
@@ -184,7 +184,7 @@ export const ClientAPI = superclass =>
          * @param {Iteration} payload An object that contains information about an iteration.
          * @returns {Promise} The newly created iteration.
          */
-        async createProjectIteration(name, project, payload) {
+        async createIterationProject(name, project, payload) {
             const url = this.baseUrl + `clients/${name}/projects/${project}/iterations`;
             const iterationContent = await this.post(url, { dataJ: payload });
             return iterationContent;
@@ -200,7 +200,7 @@ export const ClientAPI = superclass =>
          * @param {Object} payload An object that contains information about an iteration.
          * @returns {Promise} The updated iteration.
          */
-        async updateProjectIteration(name, project, iteration, payload) {
+        async updateIterationProject(name, project, iteration, payload) {
             const url =
                 this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.put(url, { dataJ: payload });
@@ -216,7 +216,7 @@ export const ClientAPI = superclass =>
          * @param {String} iteration The name of the iteration.
          * @returns {Promise} The deleted iteration.
          */
-        async deleteProjectIteration(name, project, iteration) {
+        async deleteIterationProject(name, project, iteration) {
             const url =
                 this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.delete(url);
@@ -234,7 +234,7 @@ export const ClientAPI = superclass =>
          * its results.
          * @returns {Promise} The iteration's reviews result list.
          */
-        async listIterationReviews(name, project, iteration, options = {}) {
+        async listReviewsIteration(name, project, iteration, options = {}) {
             const url =
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
@@ -252,7 +252,7 @@ export const ClientAPI = superclass =>
          * @param {String} review The name of the review.
          * @returns {Promise} The requested iteration's review.
          */
-        async getIterationReview(name, project, iteration, review) {
+        async getReviewIteration(name, project, iteration, review) {
             const url =
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
@@ -270,7 +270,7 @@ export const ClientAPI = superclass =>
          * @param {Review} payload An object that contains information about a review.
          * @returns {Promise} The newly created iteration.
          */
-        async createIterationReview(name, project, iteration, payload) {
+        async createReviewIteration(name, project, iteration, payload) {
             const url =
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
@@ -289,7 +289,7 @@ export const ClientAPI = superclass =>
          * @param {Object} payload An object that contains information about a review.
          * @returns {Promise} The updated review.
          */
-        async updateIterationReview(name, project, iteration, review, payload) {
+        async updateReviewIteration(name, project, iteration, review, payload) {
             const url =
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
@@ -307,7 +307,7 @@ export const ClientAPI = superclass =>
          * @param {String} review The name of the review.
          * @returns {Promise} The deleted review.
          */
-        async deleteIterationReview(name, project, iteration, review) {
+        async deleteReviewIteration(name, project, iteration, review) {
             const url =
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
