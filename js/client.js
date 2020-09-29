@@ -63,7 +63,7 @@ export const ClientAPI = superclass =>
          *
          * @memberof ClientAPI
          * @param {String} name The name of the client.
-         * @returns {Promise} The deleted client.
+         * @returns {Promise} Empty response.
          */
         async deleteClient(name) {
             const url = this.baseUrl + `clients/${name}`;
@@ -135,7 +135,7 @@ export const ClientAPI = superclass =>
          * @memberof ClientAPI
          * @param {String} name The name of the client.
          * @param {String} project The name of the project.
-         * @returns {Promise} The deleted client's project.
+         * @returns {Promise} Empty response.
          */
         async deleteProjectClient(name, project) {
             const url = this.baseUrl + `clients/${name}/projects/${project}`;
@@ -214,7 +214,7 @@ export const ClientAPI = superclass =>
          * @param {String} name The name of the client.
          * @param {String} project The name of the project.
          * @param {String} iteration The name of the iteration.
-         * @returns {Promise} The deleted iteration.
+         * @returns {Promise} Empty response.
          */
         async deleteIterationProject(name, project, iteration) {
             const url =
@@ -305,7 +305,7 @@ export const ClientAPI = superclass =>
          * @param {String} project The name of the project.
          * @param {String} iteration The name of the iteration.
          * @param {String} review The name of the review.
-         * @returns {Promise} The deleted review.
+         * @returns {Promise} Empty response.
          */
         async deleteReviewIteration(name, project, iteration, review) {
             const url =

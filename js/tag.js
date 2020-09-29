@@ -63,7 +63,7 @@ export const TagAPI = superclass =>
          *
          * @memberof TagAPI
          * @param {String} name The name of the tag.
-         * @returns {Promise} The deleted tag.
+         * @returns {Promise} Empty response..
          */
         async deleteTag(name) {
             const url = this.baseUrl + `tags/${name}`;

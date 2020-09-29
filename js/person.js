@@ -65,7 +65,7 @@ export const PersonAPI = superclass =>
          *
          * @memberof PersonAPI
          * @param {String} email The e-mail of the person.
-         * @returns {Promise} The deleted person.
+         * @returns {Promise} Empty response.
          */
         async deletePerson(email) {
             const url = this.baseUrl + `people/${email}`;
