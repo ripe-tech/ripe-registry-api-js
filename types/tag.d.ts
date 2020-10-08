@@ -1,6 +1,3 @@
-import { Client } from "./client";
-import { Person } from "./person";
-
 export interface Options {
     readonly fields?: Array<string>,
     readonly eager?: Boolean,
@@ -17,26 +14,28 @@ export interface Options {
     readonly raiseE?: Boolean,
 }
 
-export interface Project {
+export interface Tag {
     readonly id?: string;
     readonly name: string;
     readonly description: string;
-    readonly fqn: string;
-    readonly client: Client;
-    readonly manager: Person;
+    readonly color: string;
 }
 
-export interface ProjectPatch {
+export interface TagPatch {
     readonly description?: string;
-    readonly manager?: Person;
+    readonly color?: Person;
 }
 
-export interface ProjectCreate {
+export interface TagCreate {
     readonly name: string;
     readonly description?: string;
-    readonly manager?: Person;
+    readonly color?: string;
 }
 
-export declare class ProjectAPI {
-    listProjects(options: Options): Array<Project>
+export declare class TagAPI {
+    listTags(options: Options): Array<Tag>
+    getTag(name: string): Tag
+    createTag(payload: TagCreate): Tag
+    updateTag(payload: TagPatch): Tag
+    deleteTag(name: string): Tag
 }
