@@ -17,8 +17,11 @@ export interface Options {
 export interface Tag {
     readonly id?: string;
     readonly name: string;
-    readonly description: string;
-    readonly color: string;
+    readonly description?: string;
+    readonly color?: string;
+    readonly created: number;
+    readonly modified: number;
+    readonly meta: Record<string, unknown>;
 }
 
 export interface TagPatch {
@@ -27,9 +30,13 @@ export interface TagPatch {
 }
 
 export interface TagCreate {
+    readonly id?: string;
     readonly name: string;
     readonly description?: string;
     readonly color?: string;
+    readonly created?: number;
+    readonly modified?: number;
+    readonly meta?: Record<string, unknown>;
 }
 
 export declare class TagAPI {

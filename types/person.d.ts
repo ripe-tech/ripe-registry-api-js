@@ -15,13 +15,16 @@ export interface Options {
 }
 
 export interface Person {
-    readonly id?: string;
+    readonly id: string;
     readonly email: string;
     readonly name: string;
-    readonly company: string;
-    readonly position: string;
-    readonly phone: string;
-    readonly platformeId: string;
+    readonly company?: string;
+    readonly position?: string;
+    readonly phone?: string;
+    readonly platformeId?: string;
+    readonly created: number;
+    readonly modified: number;
+    readonly meta: Record<string, unknown>;
 }
 
 export interface PersonPatch {
@@ -33,12 +36,16 @@ export interface PersonPatch {
 }
 
 export interface PersonCreate {
+    readonly id?: number;
     readonly email: string;
     readonly name: string;
     readonly company?: string;
     readonly position?: string;
     readonly phone?: string;
     readonly platformeId?: string;
+    readonly created?: number;
+    readonly modified?: number;
+    readonly meta?: Record<string, unknown>;
 }
 
 export declare class PersonAPI {
