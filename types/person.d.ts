@@ -1,5 +1,5 @@
 export interface Options {
-    readonly fields?: Array<string>,
+    readonly fields?: string[],
     readonly eager?: Boolean,
     readonly eagerL?: Boolean,
     readonly map?: Boolean,
@@ -10,7 +10,7 @@ export interface Options {
     readonly resolveA?: Boolean,
     readonly skip?: Number,
     readonly limit?: Number,
-    readonly sort?: Array<Object>,
+    readonly sort?: unknown[][],
     readonly raiseE?: Boolean,
 }
 
@@ -42,7 +42,7 @@ export interface PersonCreate {
 }
 
 export declare class PersonAPI {
-    listPersons(options: Options): Array<Person>
+    listPersons(options: Options): Person[];
     getPerson(email: string): Person;
     createPerson(payload: PersonCreate): Person;
     updatePerson(email: string, payload: PersonPatch): Person;

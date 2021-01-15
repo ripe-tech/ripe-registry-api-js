@@ -1,5 +1,5 @@
 export interface Options {
-    readonly fields?: Array<string>,
+    readonly fields?: string[],
     readonly eager?: Boolean,
     readonly eagerL?: Boolean,
     readonly map?: Boolean,
@@ -10,7 +10,7 @@ export interface Options {
     readonly resolveA?: Boolean,
     readonly skip?: Number,
     readonly limit?: Number,
-    readonly sort?: Array<Object>,
+    readonly sort?: unknown[][],
     readonly raiseE?: Boolean,
 }
 
@@ -23,7 +23,7 @@ export interface Tag {
 
 export interface TagPatch {
     readonly description?: string;
-    readonly color?: Person;
+    readonly color?: string;
 }
 
 export interface TagCreate {
@@ -33,7 +33,7 @@ export interface TagCreate {
 }
 
 export declare class TagAPI {
-    listTags(options: Options): Array<Tag>
+    listTags(options: Options): Tag[]
     getTag(name: string): Tag
     createTag(payload: TagCreate): Tag
     updateTag(payload: TagPatch): Tag

@@ -2,7 +2,7 @@ import { Person } from "./person";
 import { Project, ProjectCreate, ProjectPatch } from "./project";
 
 export interface Options {
-    readonly fields?: Array<string>,
+    readonly fields?: string[],
     readonly eager?: Boolean,
     readonly eagerL?: Boolean,
     readonly map?: Boolean,
@@ -13,7 +13,7 @@ export interface Options {
     readonly resolveA?: Boolean,
     readonly skip?: Number,
     readonly limit?: Number,
-    readonly sort?: Array<Object>,
+    readonly sort?: unknown[][],
     readonly raiseE?: Boolean,
 }
 
@@ -88,25 +88,25 @@ export interface ReviewCreate {
 }
 
 export declare class ClientAPI {
-    listClients(options: Options): Array<Client>;
+    listClients(options: Options): Client[];
     getClient(name: string): Client;
     createClient(payload: ClientCreate): Client;
     updateClient(name: string, payload: ClientPatch): Client;
     deleteClient(name: string): Client;
 
-    listClientProjects(name: string, options: Options): Array<Project>;
+    listClientProjects(name: string, options: Options): Project[];
     getClientProject(name: string, project: string): Project;
     createClientProject(name: string, payload: ProjectCreate): Project;
     updateClientProject(name: string, project: string, payload: ProjectPatch): Project;
     deleteClientProject(name: string, project: string): Project;
 
-    listProjectIterations(name: string, project: string, options: Options): Array<Iteration>;
+    listProjectIterations(name: string, project: string, options: Options): Iteration[];
     getProjectIteration(name: string, project: string, iteration: string): Iteration;
     createProjectIteration(name: string, project: string, payload: IterationCreate): Iteration;
     updateProjectIteration(name: string, project: string, iteration: string, payload: IterationPatch): Iteration;
     deleteProjectIteration(name: string, project: string, iteration: string): Iteration;
 
-    listIterationReviews(name: string, project: string, iteration: string, options: Options): Array<Review>;
+    listIterationReviews(name: string, project: string, iteration: string, options: Options): Review[];
     getIterationReview(name: string, project: string, iteration: string, review: string): Review;
     createIterationReview(name: string, project: string, iteration: string, payload: ReviewCreate): Review;
     updateIterationReview(name: string, project: string, iteration: string, review: string, payload: ReviewPatch): Review;

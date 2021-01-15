@@ -2,7 +2,7 @@ import { Client } from "./client";
 import { Person } from "./person";
 
 export interface Options {
-    readonly fields?: Array<string>,
+    readonly fields?: string[],
     readonly eager?: Boolean,
     readonly eagerL?: Boolean,
     readonly map?: Boolean,
@@ -13,7 +13,7 @@ export interface Options {
     readonly resolveA?: Boolean,
     readonly skip?: Number,
     readonly limit?: Number,
-    readonly sort?: Array<Object>,
+    readonly sort?: unknown[][],
     readonly raiseE?: Boolean,
 }
 
@@ -38,5 +38,5 @@ export interface ProjectCreate {
 }
 
 export declare class ProjectAPI {
-    listProjects(options: Options): Array<Project>
+    listProjects(options: Options): Project[]
 }
