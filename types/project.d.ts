@@ -23,7 +23,7 @@ export interface ProjectCreate {
     readonly id?: string;
     readonly name: string;
     readonly description?: string;
-    readonly client?: string;
+    readonly client: string;
     readonly manager?: string;
     readonly created?: number;
     readonly modified?: number;
@@ -31,5 +31,5 @@ export interface ProjectCreate {
 }
 
 export declare class ProjectAPI {
-    listProjects(options: Options): Project[]
+    listProjects(options?: Options): Project[]
 }

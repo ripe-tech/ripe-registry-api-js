@@ -35,7 +35,7 @@ export interface PersonCreate {
 }
 
 export declare class PersonAPI {
-    listPersons(options: Options): Person[];
+    listPersons(options?: Options): Person[];
     getPerson(email: string): Person;
     createPerson(payload: PersonCreate): Person;
     updatePerson(email: string, payload: PersonPatch): Person;
