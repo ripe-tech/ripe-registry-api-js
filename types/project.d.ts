@@ -7,8 +7,8 @@ export interface Project {
     readonly name: string;
     readonly fqn: string;
     readonly description?: string;
-    readonly client: Client;
-    readonly manager?: Person;
+    readonly client: string;
+    readonly manager?: string;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
@@ -16,15 +16,15 @@ export interface Project {
 
 export interface ProjectPatch {
     readonly description?: string;
-    readonly manager?: Person;
+    readonly manager?: string;
 }
 
 export interface ProjectCreate {
     readonly id?: string;
     readonly name: string;
     readonly description?: string;
-    readonly client?: Person;
-    readonly manager?: Person;
+    readonly client?: string;
+    readonly manager?: string;
     readonly created?: number;
     readonly modified?: number;
     readonly meta?: Record<string, unknown>;

@@ -1,13 +1,12 @@
 import { Options } from "./options";
-import { Person } from "./person";
 import { Project, ProjectCreate, ProjectPatch } from "./project";
 
 export interface Client {
     readonly id: string;
     readonly name: string;
     readonly website?: string;
-    readonly accountManager?: Person;
-    readonly clientRepresentative?: Person;
+    readonly accountManager?: string;
+    readonly clientRepresentative?: string;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
@@ -15,16 +14,16 @@ export interface Client {
 
 export interface ClientPatch {
     readonly website?: string;
-    readonly accountManager?: Person;
-    readonly clientRepresentative?: Person;
+    readonly accountManager?: string;
+    readonly clientRepresentative?: string;
 }
 
 export interface ClientCreate {
     readonly id?: string;
     readonly name: string;
     readonly website?: string;
-    readonly accountManager?: Person;
-    readonly clientRepresentative?: Person;
+    readonly accountManager?: string;
+    readonly clientRepresentative?: string;
     readonly created?: number;
     readonly modified?: number;
     readonly meta?: Record<string, unknown>;
@@ -41,9 +40,9 @@ export interface Iteration {
     readonly name: string;
     readonly fqn: string,
     readonly description?: string;
-    readonly project: Project;
-    readonly owner: Person;
-    readonly reviewer: Person;
+    readonly project: string;
+    readonly owner: string;
+    readonly reviewer: string;
     readonly status: keyof typeof Status;
     readonly created: number;
     readonly modified: number;
@@ -52,8 +51,8 @@ export interface Iteration {
 
 export interface IterationPatch {
     readonly description?: string;
-    readonly owner?: Person;
-    readonly reviewer?: Person;
+    readonly owner?: string;
+    readonly reviewer?: string;
     readonly status?: keyof typeof Status;
 }
 
@@ -61,9 +60,9 @@ export interface IterationCreate {
     readonly id?: string;
     readonly name: string;
     readonly description?: string;
-    readonly project?: Project;
-    readonly owner: Person;
-    readonly reviewer: Person;
+    readonly project?: string;
+    readonly owner: string;
+    readonly reviewer: string;
     readonly status?: keyof typeof Status;
     readonly created?: number;
     readonly modified?: number;
@@ -72,10 +71,10 @@ export interface IterationCreate {
 
 export interface Review {
     readonly id: string;
-    readonly number: Number;
+    readonly number: number;
     readonly fqn: string;
     readonly comment: string;
-    readonly iteration: Iteration;
+    readonly iteration: string;
     readonly status: keyof typeof Status;
     readonly created: number;
     readonly modified: number;
@@ -90,7 +89,7 @@ export interface ReviewPatch {
 export interface ReviewCreate {
     readonly id?: string;
     readonly comment: string;
-    readonly iteration?: Iteration;
+    readonly iteration?: string;
     readonly status?: keyof typeof Status;
     readonly created?: number;
     readonly modified?: number;
