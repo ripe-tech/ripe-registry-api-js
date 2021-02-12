@@ -19,19 +19,6 @@ export const ClientAPI = superclass =>
         }
 
         /**
-         * Returns the client with the provided name.
-         *
-         * @memberof ClientAPI
-         * @param {String} name The name of the client.
-         * @returns {Promise} The client requested.
-         */
-        async getClient(name) {
-            const url = this.baseUrl + `clients/${name}`;
-            const client = await this.get(url);
-            return client;
-        }
-
-        /**
          * Creates a new client with the provided information.
          *
          * @memberof ClientAPI
@@ -41,6 +28,19 @@ export const ClientAPI = superclass =>
         async createClient(payload) {
             const url = this.baseUrl + "clients";
             const client = await this.post(url, { dataJ: payload });
+            return client;
+        }
+
+        /**
+         * Returns the client with the provided name.
+         *
+         * @memberof ClientAPI
+         * @param {String} name The name of the client.
+         * @returns {Promise} The client requested.
+         */
+        async getClient(name) {
+            const url = this.baseUrl + `clients/${name}`;
+            const client = await this.get(url);
             return client;
         }
 
@@ -87,20 +87,6 @@ export const ClientAPI = superclass =>
         }
 
         /**
-         * Returns a project of the provided client.
-         *
-         * @memberof ClientAPI
-         * @param {String} name The name of the client.
-         * @param {String} project The name of the project.
-         * @returns {Promise} The requested client's project.
-         */
-        async getProjectClient(name, project) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}`;
-            const projectContent = await this.get(url);
-            return projectContent;
-        }
-
-        /**
          * Creates a new project for the provided client.
          *
          * @memberof ClientAPI
@@ -111,6 +97,20 @@ export const ClientAPI = superclass =>
         async createProjectClient(name, payload) {
             const url = this.baseUrl + `clients/${name}/projects`;
             const projectContent = await this.post(url, { dataJ: payload });
+            return projectContent;
+        }
+
+        /**
+         * Returns a project of the provided client.
+         *
+         * @memberof ClientAPI
+         * @param {String} name The name of the client.
+         * @param {String} project The name of the project.
+         * @returns {Promise} The requested client's project.
+         */
+        async getProjectClient(name, project) {
+            const url = this.baseUrl + `clients/${name}/projects/${project}`;
+            const projectContent = await this.get(url);
             return projectContent;
         }
 
@@ -160,6 +160,21 @@ export const ClientAPI = superclass =>
         }
 
         /**
+         * Creates a new iteration for the provided project.
+         *
+         * @memberof ClientAPI
+         * @param {String} name The name of the client.
+         * @param {String} project The name of the project.
+         * @param {Iteration} payload An object that contains information about an iteration.
+         * @returns {Promise} The newly created iteration.
+         */
+        async createIterationProject(name, project, payload) {
+            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations`;
+            const iterationContent = await this.post(url, { dataJ: payload });
+            return iterationContent;
+        }
+
+        /**
          * Returns a client's project iteration.
          *
          * @memberof ClientAPI
@@ -172,21 +187,6 @@ export const ClientAPI = superclass =>
             const url =
                 this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
             const iterationContent = await this.get(url);
-            return iterationContent;
-        }
-
-        /**
-         * Creates a new iteration for the provided project.
-         *
-         * @memberof ClientAPI
-         * @param {String} name The name of the client.
-         * @param {String} project The name of the project.
-         * @param {Iteration} payload An object that contains information about an iteration.
-         * @returns {Promise} The newly created iteration.
-         */
-        async createIterationProject(name, project, payload) {
-            const url = this.baseUrl + `clients/${name}/projects/${project}/iterations`;
-            const iterationContent = await this.post(url, { dataJ: payload });
             return iterationContent;
         }
 
@@ -243,24 +243,6 @@ export const ClientAPI = superclass =>
         }
 
         /**
-         * Returns an iteration's review.
-         *
-         * @memberof ClientAPI
-         * @param {String} name The name of the client.
-         * @param {String} project The name of the project.
-         * @param {String} iteration The name of the iteration.
-         * @param {String} review The name of the review.
-         * @returns {Promise} The requested iteration's review.
-         */
-        async getReviewIteration(name, project, iteration, review) {
-            const url =
-                this.baseUrl +
-                `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
-            const reviewContent = await this.get(url);
-            return reviewContent;
-        }
-
-        /**
          * Creates a new review for the provided iteration.
          *
          * @memberof ClientAPI
@@ -275,6 +257,24 @@ export const ClientAPI = superclass =>
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews`;
             const reviewContent = await this.post(url, { dataJ: payload });
+            return reviewContent;
+        }
+
+        /**
+         * Returns an iteration's review.
+         *
+         * @memberof ClientAPI
+         * @param {String} name The name of the client.
+         * @param {String} project The name of the project.
+         * @param {String} iteration The name of the iteration.
+         * @param {String} review The name of the review.
+         * @returns {Promise} The requested iteration's review.
+         */
+        async getReviewIteration(name, project, iteration, review) {
+            const url =
+                this.baseUrl +
+                `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
+            const reviewContent = await this.get(url);
             return reviewContent;
         }
 

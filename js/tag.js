@@ -19,19 +19,6 @@ export const TagAPI = superclass =>
         }
 
         /**
-         * Returns the tag with the provided name.
-         *
-         * @memberof TagAPI
-         * @param {String} name The name of the tag.
-         * @returns {Promise} The tag requested.
-         */
-        async getTag(name) {
-            const url = this.baseUrl + `tags/${name}`;
-            const tag = await this.get(url);
-            return tag;
-        }
-
-        /**
          * Creates a new tag with the provided information.
          *
          * @memberof TagAPI
@@ -41,6 +28,19 @@ export const TagAPI = superclass =>
         async createTag(payload) {
             const url = this.baseUrl + "tags";
             const tag = await this.post(url, { dataJ: payload });
+            return tag;
+        }
+
+        /**
+         * Returns the tag with the provided name.
+         *
+         * @memberof TagAPI
+         * @param {String} name The name of the tag.
+         * @returns {Promise} The tag requested.
+         */
+        async getTag(name) {
+            const url = this.baseUrl + `tags/${name}`;
+            const tag = await this.get(url);
             return tag;
         }
 
