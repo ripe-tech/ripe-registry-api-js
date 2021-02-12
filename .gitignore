@@ -1,7 +1,7 @@
 .DS_Store
 
-example.env
 yarn.lock
+example.env
 package-lock.json
 
 /.vscode/settings.json
