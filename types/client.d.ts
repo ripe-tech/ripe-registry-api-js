@@ -1,4 +1,5 @@
 import { Options } from "yonius";
+
 import { Project, ProjectCreate, ProjectPatch } from "./project";
 
 export interface Client {
