@@ -27,8 +27,8 @@ export interface TagCreate {
 
 export declare class TagAPI {
     listTags(options?: Options): Tag[]
-    getTag(name: string): Tag
     createTag(payload: TagCreate): Tag
+    getTag(name: string): Tag
     updateTag(payload: TagPatch): Tag
     deleteTag(name: string): Tag
 }

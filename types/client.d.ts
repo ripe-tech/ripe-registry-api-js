@@ -98,26 +98,26 @@ export interface ReviewCreate {
 
 export declare class ClientAPI {
     listClients(options?: Options): Client[];
-    getClient(name: string): Client;
     createClient(payload: ClientCreate): Client;
+    getClient(name: string): Client;
     updateClient(name: string, payload: ClientPatch): Client;
     deleteClient(name: string): void;
 
     listProjectsClient(name: string, options?: Options): Project[];
-    getProjectClient(name: string, project: string): Project;
     createProjectClient(name: string, payload: ProjectCreate): Project;
+    getProjectClient(name: string, project: string): Project;
     updateProjectClient(name: string, project: string, payload: ProjectPatch): Project;
     deleteProjectClient(name: string, project: string): void;
 
     listIterationsProject(name: string, project: string, options?: Options): Iteration[];
-    getIterationProject(name: string, project: string, iteration: string): Iteration;
     createIterationProject(name: string, project: string, payload: IterationCreate): Iteration;
+    getIterationProject(name: string, project: string, iteration: string): Iteration;
     updateIterationProject(name: string, project: string, iteration: string, payload: IterationPatch): Iteration;
     deleteIterationProject(name: string, project: string, iteration: string): void;
 
     listReviewsIteration(name: string, project: string, iteration: string, options?: Options): Review[];
-    getReviewIteration(name: string, project: string, iteration: string, review: number): Review;
     createReviewIteration(name: string, project: string, iteration: string, payload: ReviewCreate): Review;
+    getReviewIteration(name: string, project: string, iteration: string, review: number): Review;
     updateReviewIteration(name: string, project: string, iteration: string, review: number, payload: ReviewPatch): Review;
     deleteReviewIteration(name: string, project: string, iteration: string, review: number): void;
 }
