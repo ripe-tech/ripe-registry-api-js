@@ -1,4 +1,4 @@
-import { Options } from "yonius";
+import { APIOptions } from "yonius";
 
 export interface Tag {
     readonly id?: string;
@@ -26,7 +26,7 @@ export interface TagCreate {
 }
 
 export declare class TagAPI {
-    listTags(options?: Options): Tag[]
+    listTags(options?: APIOptions): Tag[]
     getTag(name: string): Tag
     createTag(payload: TagCreate): Tag
     updateTag(payload: TagPatch): Tag
