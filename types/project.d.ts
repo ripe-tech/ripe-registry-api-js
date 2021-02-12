@@ -1,42 +1,35 @@
 import { Client } from "./client";
+import { Options } from "./options";
 import { Person } from "./person";
-
-export interface Options {
-    readonly fields?: Array<string>,
-    readonly eager?: Boolean,
-    readonly eagerL?: Boolean,
-    readonly map?: Boolean,
-    readonly rules?: Boolean,
-    readonly meta?: Boolean,
-    readonly build?: Boolean,
-    readonly fill?: Boolean,
-    readonly resolveA?: Boolean,
-    readonly skip?: Number,
-    readonly limit?: Number,
-    readonly sort?: Array<Object>,
-    readonly raiseE?: Boolean,
-}
 
 export interface Project {
     readonly id?: string;
     readonly name: string;
-    readonly description: string;
     readonly fqn: string;
-    readonly client: Client;
-    readonly manager: Person;
+    readonly description?: string;
+    readonly client: string;
+    readonly manager?: string;
+    readonly created: number;
+    readonly modified: number;
+    readonly meta: Record<string, unknown>;
 }
 
 export interface ProjectPatch {
     readonly description?: string;
-    readonly manager?: Person;
+    readonly manager?: string;
 }
 
 export interface ProjectCreate {
+    readonly id?: string;
     readonly name: string;
     readonly description?: string;
-    readonly manager?: Person;
+    readonly client: string;
+    readonly manager?: string;
+    readonly created?: number;
+    readonly modified?: number;
+    readonly meta?: Record<string, unknown>;
 }
 
 export declare class ProjectAPI {
-    listProjects(options: Options): Array<Project>
+    listProjects(options?: Options): Project[]
 }
