@@ -1,5 +1,5 @@
 import { Client } from "./client";
-import { Options } from "./options";
+import { Options } from "yonius";
 import { Person } from "./person";
 
 export interface Project {
