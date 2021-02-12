@@ -1,4 +1,4 @@
-import { Options } from "./options";
+import { APIOptions } from "yonius";
 
 export interface Person {
     readonly id: string;
@@ -35,7 +35,7 @@ export interface PersonCreate {
 }
 
 export declare class PersonAPI {
-    listPersons(options?: Options): Person[];
+    listPersons(options?: APIOptions): Person[];
     createPerson(payload: PersonCreate): Person;
     getPerson(email: string): Person;
     updatePerson(email: string, payload: PersonPatch): Person;
