@@ -21,19 +21,6 @@ export const PersonAPI = superclass =>
         }
 
         /**
-         * Returns the person with the provided e-mail.
-         *
-         * @memberof PersonAPI
-         * @param {String} email The e-mail of the person.
-         * @returns {Promise} The person requested.
-         */
-        async getPerson(email) {
-            const url = this.baseUrl + `people/${email}`;
-            const person = await this.get(url);
-            return person;
-        }
-
-        /**
          * Creates a new person with the provided information.
          *
          * @memberof PersonAPI
@@ -43,6 +30,19 @@ export const PersonAPI = superclass =>
         async createPerson(payload) {
             const url = this.baseUrl + "people";
             const person = await this.post(url, { dataJ: payload });
+            return person;
+        }
+
+        /**
+         * Returns the person with the provided e-mail.
+         *
+         * @memberof PersonAPI
+         * @param {String} email The e-mail of the person.
+         * @returns {Promise} The person requested.
+         */
+        async getPerson(email) {
+            const url = this.baseUrl + `people/${email}`;
+            const person = await this.get(url);
             return person;
         }
 
