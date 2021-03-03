@@ -32,5 +32,5 @@ export interface ProjectCreate {
 }
 
 export declare class ProjectAPI {
-    listProjects(options?: APIOptions): Project[]
+    listProjects(options?: APIOptions): Promise<Project[]>;
 }

@@ -35,9 +35,9 @@ export interface PersonCreate {
 }
 
 export declare class PersonAPI {
-    listPersons(options?: APIOptions): Person[];
-    createPerson(payload: PersonCreate): Person;
-    getPerson(email: string): Person;
-    updatePerson(email: string, payload: PersonPatch): Person;
-    deletePerson(email: string): Person;
+    listPersons(options?: APIOptions): Promise<Person[]>;
+    createPerson(payload: PersonCreate): Promise<Person>;
+    getPerson(email: string): Promise<Person>;
+    updatePerson(email: string, payload: PersonPatch): Promise<Person>;
+    deletePerson(email: string): Promise<Person>;
 }

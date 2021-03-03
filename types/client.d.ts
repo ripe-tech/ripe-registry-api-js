@@ -98,27 +98,27 @@ export interface ReviewCreate {
 }
 
 export declare class ClientAPI {
-    listClients(options?: APIOptions): Client[];
-    createClient(payload: ClientCreate): Client;
-    getClient(name: string): Client;
-    updateClient(name: string, payload: ClientPatch): Client;
-    deleteClient(name: string): void;
+    listClients(options?: APIOptions): Promise<Client[]>;
+    createClient(payload: ClientCreate): Promise<Client>;
+    getClient(name: string): Promise<Client>;
+    updateClient(name: string, payload: ClientPatch): Promise<Client>;
+    deleteClient(name: string): Promise<void>;
 
-    listProjectsClient(name: string, options?: APIOptions): Project[];
-    createProjectClient(name: string, payload: ProjectCreate): Project;
-    getProjectClient(name: string, project: string): Project;
-    updateProjectClient(name: string, project: string, payload: ProjectPatch): Project;
-    deleteProjectClient(name: string, project: string): void;
+    listProjectsClient(name: string, options?: APIOptions): Promise<Project[]>;
+    createProjectClient(name: string, payload: ProjectCreate): Promise<Project>;
+    getProjectClient(name: string, project: string): Promise<Project>;
+    updateProjectClient(name: string, project: string, payload: ProjectPatch): Promise<Project>;
+    deleteProjectClient(name: string, project: string): Promise<void>;
 
-    listIterationsProject(name: string, project: string, options?: APIOptions): Iteration[];
-    createIterationProject(name: string, project: string, payload: IterationCreate): Iteration;
-    getIterationProject(name: string, project: string, iteration: string): Iteration;
-    updateIterationProject(name: string, project: string, iteration: string, payload: IterationPatch): Iteration;
-    deleteIterationProject(name: string, project: string, iteration: string): void;
+    listIterationsProject(name: string, project: string, options?: APIOptions): Promise<Iteration[]>;
+    createIterationProject(name: string, project: string, payload: IterationCreate): Promise<Iteration>;
+    getIterationProject(name: string, project: string, iteration: string): Promise<Iteration>;
+    updateIterationProject(name: string, project: string, iteration: string, payload: IterationPatch): Promise<Iteration>;
+    deleteIterationProject(name: string, project: string, iteration: string): Promise<void>;
 
-    listReviewsIteration(name: string, project: string, iteration: string, options?: APIOptions): Review[];
-    createReviewIteration(name: string, project: string, iteration: string, payload: ReviewCreate): Review;
-    getReviewIteration(name: string, project: string, iteration: string, review: number): Review;
-    updateReviewIteration(name: string, project: string, iteration: string, review: number, payload: ReviewPatch): Review;
-    deleteReviewIteration(name: string, project: string, iteration: string, review: number): void;
+    listReviewsIteration(name: string, project: string, iteration: string, options?: APIOptions): Promise<Review[]>;
+    createReviewIteration(name: string, project: string, iteration: string, payload: ReviewCreate): Promise<Review>;
+    getReviewIteration(name: string, project: string, iteration: string, review: number): Promise<Review>;
+    updateReviewIteration(name: string, project: string, iteration: string, review: number, payload: ReviewPatch): Promise<Review>;
+    deleteReviewIteration(name: string, project: string, iteration: string, review: number): Promise<void>;
 }
