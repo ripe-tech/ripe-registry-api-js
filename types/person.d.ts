@@ -39,5 +39,5 @@ export declare class PersonAPI {
     createPerson(payload: PersonCreate): Promise<Person>;
     getPerson(email: string): Promise<Person>;
     updatePerson(email: string, payload: PersonPatch): Promise<Person>;
-    deletePerson(email: string): Promise<Person>;
+    deletePerson(email: string): Promise<void>;
 }

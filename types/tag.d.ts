@@ -30,5 +30,5 @@ export declare class TagAPI {
     createTag(payload: TagCreate): Promise<Tag>;
     getTag(name: string): Promise<Tag>;
     updateTag(payload: TagPatch): Promise<Tag>;
-    deleteTag(name: string): Promise<Tag>;
+    deleteTag(name: string): Promise<void>;
 }
