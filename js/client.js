@@ -67,7 +67,8 @@ export const ClientAPI = superclass =>
          */
         async deleteClient(name) {
             const url = this.baseUrl + `clients/${name}`;
-            return await this.delete(url);
+            const client = await this.delete(url);
+            return client;
         }
 
         /**
@@ -138,7 +139,8 @@ export const ClientAPI = superclass =>
          */
         async deleteProjectClient(name, project) {
             const url = this.baseUrl + `clients/${name}/projects/${project}`;
-            return await this.delete(url);
+            const projectContent = await this.delete(url);
+            return projectContent;
         }
 
         /**
@@ -217,7 +219,8 @@ export const ClientAPI = superclass =>
         async deleteIterationProject(name, project, iteration) {
             const url =
                 this.baseUrl + `clients/${name}/projects/${project}/iterations/${iteration}`;
-            return await this.delete(url);
+            const iterationContent = await this.delete(url);
+            return iterationContent;
         }
 
         /**
@@ -308,7 +311,8 @@ export const ClientAPI = superclass =>
             const url =
                 this.baseUrl +
                 `clients/${name}/projects/${project}/iterations/${iteration}/reviews/${review}`;
-            return await this.delete(url);
+            const reviewContent = await this.delete(url);
+            return reviewContent;
         }
     };
 

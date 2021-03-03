@@ -69,7 +69,8 @@ export const PersonAPI = superclass =>
          */
         async deletePerson(email) {
             const url = this.baseUrl + `people/${email}`;
-            return await this.delete(url);
+            const person = await this.delete(url);
+            return person;
         }
     };
 
