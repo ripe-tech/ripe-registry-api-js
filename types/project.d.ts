@@ -1,8 +1,5 @@
 import { APIOptions } from "yonius";
 
-import { Client } from "./client";
-import { Person } from "./person";
-
 export interface Project {
     readonly id?: string;
     readonly name: string;
@@ -32,5 +29,5 @@ export interface ProjectCreate {
 }
 
 export declare class ProjectAPI {
-    listProjects(options?: APIOptions): Project[]
+    listProjects(options?: APIOptions): Promise<Project[]>;
 }
